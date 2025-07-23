@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashwitha Damera | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #f8f9fa, #e0e0e0);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #4a148c;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+      background-color: #ede7f6;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4a148c;
+      border-bottom: 2px solid #4a148c;
+      display: inline-block;
+    }
+    .skills, .certifications, .projects, .activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #4a148c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ashwitha Damera</h1>
+    <p>Computer Science Student | ML Enthusiast | Full-Stack Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#activities">Activities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I am Ashwitha Damera, a Computer Science and Engineering student at GNITS, Hyderabad, with a CGPA of 9.3. I'm passionate about machine learning and full-stack development. I love solving real-world problems and continuously learning through hands-on experience and projects.</p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills">
+      <div class="card"><strong>Programming:</strong> C, C++, Python, Java</div>
+      <div class="card"><strong>Web Technologies:</strong> HTML, CSS</div>
+      <div class="card"><strong>ML Tools:</strong> NumPy, Pandas, Scikit-learn</div>
+      <div class="card"><strong>Development Tools:</strong> VS Code, Linux</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Employee Attrition Prediction</h3>
+        <p>Developed a full-stack web app using FastAPI and Random Forest to predict employee attrition. Features a modern dashboard, styled survey form, and visual insights into attrition probability and reasons.</p>
+        <p><strong>Tech Stack:</strong> Python, FastAPI, HTML, CSS, Machine Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications">
+      <div class="card">NPTEL - The Joy of Computing with Python</div>
+      <div class="card">Cybersecurity Workshop</div>
+      <div class="card">Database & SQL – Infosys Springboard</div>
+      <div class="card">Python Foundation – Infosys Springboard</div>
+      <div class="card">Basics of Python – Infosys Springboard</div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <h2 class="section-title">Extra-Curricular</h2>
+    <div class="activities">
+      <div class="card">GHMC SEEPC Coordinator</div>
+    </div>
+  </section>
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p><i class="fas fa-envelope"></i> {{ email }}</p>
+  <p><i class="fas fa-phone"></i> {{ phone }}</p>
+
+  <form method="POST" style="margin-top: 1.5rem;">
+    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+    <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px; margin-bottom:10px;">
+    <textarea name="message" placeholder="Your Message" rows="5" required style="width:100%; padding:10px;"></textarea>
+    <button type="submit" style="padding:10px 20px; margin-top:10px; background:#4a148c; color:white; border:none;">Send Message</button>
+  </form>
+
+  {% if request.args.get('success') %}
+    <p style="color: green; margin-top: 1rem;">Message sent successfully ✅</p>
+  {% endif %}
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Ashwitha Damera. All rights reserved.</p>
+  </footer>
+</body>
+</html>
